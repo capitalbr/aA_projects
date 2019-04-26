@@ -1,8 +1,12 @@
-
+require_relative "Queen.rb"
+require_relative "Rook.rb"
+require_relative "Bishop.rb"
+require_relative "Knight.rb"
+require_relative "King.rb"
+require_relative "Pawn.rb"
 require_relative "Chess_piece.rb"
 require_relative "Chess_piece_null.rb"
 require_relative "Chess_display.rb"
-require_relative "Queen.rb"
 
 class ChessBoard
     attr_reader :grid, :display
@@ -20,12 +24,22 @@ class ChessBoard
             end
         end
         
-        @grid.each_with_index do |row, i|
-        
 
+        #assign chess pieces a grid
+        @grid.each_with_index do |row, i|
+    
             row.each_with_index do |piece, idx|
                 piece.board = @grid
                 
+            end
+            
+        end
+
+       @grid.each_with_index do |row, i|
+            if i < 2
+                row.each { |col| col.color = :white }
+            elsif i > 5
+                row.each { |col| col.color = :black }
             end
             
         end

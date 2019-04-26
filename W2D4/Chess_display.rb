@@ -32,6 +32,7 @@ class ChessDisplay
 
         
         loop do
+
             render
             @cursor.get_input
             system "clear"

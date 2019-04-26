@@ -1,21 +1,18 @@
-# require_relative "Queen.rb"
-# require_relative "Bishop.rb"
-# require_relative "Rook.rb"
-# require_relative "Slideable.rb"
 
 
 class ChessPiece
     attr_accessor :position, :piece, :board, :color
 
-    def initialize(board = nil, pos = nil, color = nil)
+    def initialize(color = nil, board = nil, pos = nil)
         @board = board        
-        @piece = :P
+        @piece = :x
         @position = pos
         @color = color
     end
 
     def inspect
-        @piece
+      puts "#{@color}   #{@piece}   #{@position}"
+       
     end
 
     def empty?
@@ -29,9 +26,3 @@ class ChessPiece
     end
 end
 
-
-
-#
-#
-#
-#

@@ -124,8 +124,7 @@ class Cursor
     if valid_pos?(c, d) 
       @cursor_pos = [c,d] 
     else
-      puts "sorry, not a valid pos!"
-      sleep(1.5)
+      raise "sorry, not a valid pos!"
     end
        
 

@@ -11,7 +11,9 @@ require_relative "Chess_board"
 
 game = ChessBoard.new   
 # p game.board  # shows the chess board
-game.display.loop_test
+queen = Queen.new(game, [1, 1], :black)
+p queen.moves([2, 2])
+
 
 # p game.render
 # p game.board  # shows the chess board
@@ -27,8 +29,8 @@ game.display.loop_test
 # p game.board[5][0]
 # p game.board[5][0].position   # this shows the @position using ChessPiece#position
 
-# p game.render
 
 # DISPLAY SPECS
 # game = ChessGame.new
 # game.display.render
+# game.display.loop_test
