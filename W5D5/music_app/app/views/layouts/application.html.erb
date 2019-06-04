@@ -13,11 +13,12 @@
     <% if logged_in?%>
     Current user: <%= current_user.email_address%>
     <form action="<%=session_url%>" method="POST">
-      <input type="hidden" name="authenticity_token" value=<%=current_user.session_token%> />
+      <%= auth %>
       <input type="hidden" name="_method" value="DELETE"/>
       <input type="submit" value="logout"/>
 
     </form>
+      <%= auth %>
     <%else%>
       <a href=<%= new_user_url %>>sign up</a>
       or

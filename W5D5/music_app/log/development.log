@@ -3918,3 +3918,391 @@ Processing by BandsController#show as HTML
 Completed 200 OK in 29ms (Views: 27.3ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/users/new" for ::1 at 2019-05-18 19:02:57 -0500
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bradleybarnes/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+
+ArgumentError - Before process_action callback :verify_authenticity_token has not been defined:
+  app/controllers/application_controller.rb:2:in `<class:ApplicationController>'
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/users_controller.rb:1:in `<top (required)>'
+
+Started POST "/__better_errors/8282b193049b803b/variables" for ::1 at 2019-05-18 19:02:58 -0500
+Started GET "/bands/new" for ::1 at 2019-05-18 19:03:05 -0500
+
+ArgumentError - Before process_action callback :verify_authenticity_token has not been defined:
+  app/controllers/application_controller.rb:2:in `<class:ApplicationController>'
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/bands_controller.rb:1:in `<top (required)>'
+
+Started POST "/__better_errors/237d81d85b886d2a/variables" for ::1 at 2019-05-18 19:03:05 -0500
+Started GET "/bands/new" for ::1 at 2019-05-18 19:04:41 -0500
+Processing by BandsController#new as HTML
+  Rendering bands/new.html.erb within layouts/application
+  Rendered bands/new.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 188ms (Views: 175.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/bands/new" for ::1 at 2019-05-18 19:04:56 -0500
+Processing by BandsController#new as HTML
+  Rendering bands/new.html.erb within layouts/application
+  Rendered bands/new.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 21ms (Views: 18.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/bands/new" for ::1 at 2019-05-18 19:05:00 -0500
+Processing by BandsController#new as HTML
+  Rendering bands/new.html.erb within layouts/application
+  Rendered bands/new.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 20ms (Views: 18.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/bands/new" for ::1 at 2019-05-18 19:05:02 -0500
+Processing by BandsController#new as HTML
+  Rendering bands/new.html.erb within layouts/application
+  Rendered bands/new.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 37ms (Views: 33.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/bands/new" for ::1 at 2019-05-18 19:05:02 -0500
+Processing by BandsController#new as HTML
+  Rendering bands/new.html.erb within layouts/application
+  Rendered bands/new.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 22ms (Views: 19.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/bands" for ::1 at 2019-05-18 19:05:14 -0500
+Processing by BandsController#create as HTML
+  Parameters: {"band"=>{"name"=>"band"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bands_controller.rb:19
+  [1m[36mBand Create (1.1ms)[0m  [1m[32mINSERT INTO "bands" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "band"], ["created_at", "2019-05-19 00:05:14.904195"], ["updated_at", "2019-05-19 00:05:14.904195"]]
+  ↳ app/controllers/bands_controller.rb:19
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/bands_controller.rb:19
+Redirected to http://localhost:3000/bands
+Completed 302 Found in 19ms (ActiveRecord: 10.2ms)
+
+
+Started GET "/bands" for ::1 at 2019-05-18 19:05:14 -0500
+Processing by BandsController#index as HTML
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:2
+  Rendered bands/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 23ms (Views: 20.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/bands/new" for ::1 at 2019-05-18 19:06:08 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bradleybarnes/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by BandsController#new as HTML
+  Rendering bands/new.html.erb within layouts/application
+  Rendered bands/new.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 146ms (Views: 134.2ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/bands" for ::1 at 2019-05-18 19:08:14 -0500
+Processing by BandsController#create as HTML
+  Parameters: {"band"=>{"name"=>"no token"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bands_controller.rb:19
+  [1m[36mBand Create (0.7ms)[0m  [1m[32mINSERT INTO "bands" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "no token"], ["created_at", "2019-05-19 00:08:14.240388"], ["updated_at", "2019-05-19 00:08:14.240388"]]
+  ↳ app/controllers/bands_controller.rb:19
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/bands_controller.rb:19
+Redirected to http://localhost:3000/bands
+Completed 302 Found in 14ms (ActiveRecord: 6.7ms)
+
+
+Started GET "/bands" for ::1 at 2019-05-18 19:08:14 -0500
+Processing by BandsController#index as HTML
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:2
+  Rendered bands/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 23ms (Views: 19.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/new" for ::1 at 2019-05-18 19:08:18 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 44ms (Views: 32.5ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/users" for ::1 at 2019-05-18 19:08:31 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email_address"=>"no_token", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email_address", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email_address", "no_token"], ["password_digest", "$2a$10$9CWWEJ3Y3/PpLvBZPXz4PueBeBq0pEK2k54niJBxoaVPyfd71eqsK"], ["session_token", "VonK6VpbDL10HMzsC5fOjQ"], ["created_at", "2019-05-19 00:08:31.642158"], ["updated_at", "2019-05-19 00:08:31.642158"]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:11
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "nB8m2KQ1xqmmmDUByrhC9A"], ["updated_at", "2019-05-19 00:08:31.645250"], ["id", 10]]
+  ↳ app/models/user.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:11
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 79ms (Views: 19.1ms | ActiveRecord: 2.5ms)
+
+
+Started DELETE "/session" for ::1 at 2019-05-18 19:08:35 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"eQfR7SezmKAczzLNz1qOB6IVZffctVBoseTWV3myJGflihydrmEK7QhoUVgZcInsArBIsTTYae8rKKn+O6J4GA=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "nB8m2KQ1xqmmmDUByrhC9A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:11
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "Sy6TPHib1s2h9HKa14QtfA"], ["updated_at", "2019-05-19 00:08:35.344037"], ["id", 10]]
+  ↳ app/models/user.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:11
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 5ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/session/new" for ::1 at 2019-05-18 19:08:35 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 26ms (Views: 22.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/bands/new" for ::1 at 2019-05-18 19:10:42 -0500
+Processing by BandsController#new as HTML
+  Rendering bands/new.html.erb within layouts/application
+  Rendered bands/new.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 34ms (Views: 29.9ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/bands" for ::1 at 2019-05-18 19:10:48 -0500
+Processing by BandsController#create as HTML
+  Parameters: {"band"=>{"name"=>"protected"}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started POST "/__better_errors/c49602c465df2821/variables" for ::1 at 2019-05-18 19:10:48 -0500
+Started POST "/bands" for ::1 at 2019-05-18 19:11:41 -0500
+Processing by BandsController#create as HTML
+  Parameters: {"band"=>{"name"=>"protected_2"}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started POST "/__better_errors/71c09078ed634b2c/variables" for ::1 at 2019-05-18 19:11:41 -0500
+Started POST "/bands" for ::1 at 2019-05-18 19:14:44 -0500
+Processing by BandsController#create as HTML
+  Parameters: {"band"=>{"name"=>"protected_3"}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started POST "/__better_errors/72a42edfd58fb628/variables" for ::1 at 2019-05-18 19:14:44 -0500
+Started POST "/bands" for ::1 at 2019-05-18 19:15:52 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bradleybarnes/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by BandsController#create as HTML
+  Parameters: {"band"=>{"name"=>"protected_4"}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 8ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started POST "/__better_errors/445e670b30b4c364/variables" for ::1 at 2019-05-18 19:15:52 -0500
+Started GET "/users/new" for ::1 at 2019-05-18 19:16:37 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 190ms (Views: 173.5ms | ActiveRecord: 6.2ms)
+
+
+Started POST "/users" for ::1 at 2019-05-18 19:16:48 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email_address"=>"auth1", "password"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started POST "/__better_errors/b996fbb54389cb81/variables" for ::1 at 2019-05-18 19:16:48 -0500
+Started GET "/users/new" for ::1 at 2019-05-18 19:18:27 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 25ms (Views: 22.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for ::1 at 2019-05-18 19:18:36 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"NTyx720j4E/Xu0CkjQGMdgmdMC0Sw0EGD9frznozcZSpsXyf5PFyAsMcIzFbK4udqTgda/queIGVG5RnOCMt6w==", "user"=>{"email_address"=>"tryagain", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email_address", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email_address", "tryagain"], ["password_digest", "$2a$10$avHzoNxIvo9C1/S8ZRqmNeFq1U6D9.5fhZP7YGbjVT4eZRl4rs2vy"], ["session_token", "2ltC4eM_vGS8NSg7xBh3Uw"], ["created_at", "2019-05-19 00:18:36.853169"], ["updated_at", "2019-05-19 00:18:36.853169"]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:11
+  [1m[36mUser Update (1.1ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "CJrTXuvvm06DojYJ9k_0WA"], ["updated_at", "2019-05-19 00:18:36.855893"], ["id", 11]]
+  ↳ app/models/user.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:11
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 77ms (Views: 17.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/bands/new" for ::1 at 2019-05-18 19:18:51 -0500
+Processing by BandsController#new as HTML
+  Rendering bands/new.html.erb within layouts/application
+  Rendered bands/new.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "CJrTXuvvm06DojYJ9k_0WA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 29ms (Views: 25.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/bands" for ::1 at 2019-05-18 19:18:58 -0500
+Processing by BandsController#create as HTML
+  Parameters: {"authenticity_token"=>"Eo9GGxgam1rxq0JWTbVBozNR0GA9WPUeqQbi7L4RAyGOAotrkcgJF+UMIcObn0ZIk/T9JtU1zJkzyp1F/AFfXg==", "band"=>{"name"=>"authorized?"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bands_controller.rb:19
+  [1m[36mBand Create (0.5ms)[0m  [1m[32mINSERT INTO "bands" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "authorized?"], ["created_at", "2019-05-19 00:18:58.434776"], ["updated_at", "2019-05-19 00:18:58.434776"]]
+  ↳ app/controllers/bands_controller.rb:19
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/bands_controller.rb:19
+Redirected to http://localhost:3000/bands
+Completed 302 Found in 15ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/bands" for ::1 at 2019-05-18 19:18:58 -0500
+Processing by BandsController#index as HTML
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:2
+  Rendered bands/index.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "CJrTXuvvm06DojYJ9k_0WA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 22ms (Views: 18.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/bands" for ::1 at 2019-05-18 19:19:28 -0500
+Processing by BandsController#index as HTML
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:2
+  Rendered bands/index.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "CJrTXuvvm06DojYJ9k_0WA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 21ms (Views: 18.4ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/session" for ::1 at 2019-05-18 19:19:31 -0500
+Processing by SessionsController#destroy as HTML
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started POST "/__better_errors/0b6db69dd809d8c4/variables" for ::1 at 2019-05-18 19:19:31 -0500
+Started DELETE "/session" for ::1 at 2019-05-18 19:19:35 -0500
+Processing by SessionsController#destroy as HTML
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started POST "/__better_errors/d9a0933a4a2a6a40/variables" for ::1 at 2019-05-18 19:19:35 -0500
+Started DELETE "/session" for ::1 at 2019-05-18 19:19:52 -0500
+Processing by SessionsController#destroy as HTML
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started POST "/__better_errors/afa276e5b7dd0c97/variables" for ::1 at 2019-05-18 19:19:52 -0500
+Started GET "/bands" for ::1 at 2019-05-18 19:20:51 -0500
+Processing by BandsController#index as HTML
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:2
+  Rendered bands/index.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "CJrTXuvvm06DojYJ9k_0WA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 30ms (Views: 26.3ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/session" for ::1 at 2019-05-18 19:20:52 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5SWVlF+/vZxCkf8UWLTXfG5x93m+d/E3B7IOBKtajpl5qFjk1m0v0VY2nIGOntCXztTaP1YayLCdfnGt6UrS5g=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "CJrTXuvvm06DojYJ9k_0WA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:11
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "YQee5f8f61eT3vMm_vO_IA"], ["updated_at", "2019-05-19 00:20:52.382589"], ["id", 11]]
+  ↳ app/models/user.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:11
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 4ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/session/new" for ::1 at 2019-05-18 19:20:52 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 25ms (Views: 22.1ms | ActiveRecord: 0.3ms)
+
+
