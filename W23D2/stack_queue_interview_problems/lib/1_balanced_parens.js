@@ -17,6 +17,8 @@
 // Note: Your code should ignore all non-bracket characters in the input 
 //       string.
 //
+
+// ( (((5)))(((4))) )
 // ------
 // Bonus: 
 // ------
@@ -75,8 +77,77 @@
 // -----------
 // Let's code!
 // -----------
-function balancedParens(str) {
 
-}
+
+// function balancedParens(str) {
+//   let cntHash = { '(': 0, ')': 0, '[': 0, ']': 0, '{': 0, '}': 0 };
+//   // let balancedHash = {{"()": true, "{}": true}}
+//   // let balancedStack = []; // length > 1, must close last element next
+
+// //  ( ( [[ )) >> parenthesis balanced good to go
+// //   balanced?
+
+//   for (let i=0; i< str.length; i++) {
+//     switch (str[i]){
+//       case "(":
+//         cntHash['('] += 1;
+//         break;
+//       case ")":
+//         cntHash[')'] += 1;
+//         break;
+//       case "[":
+//         cntHash['['] += 1;
+//         break;
+//       case "]":
+//         cntHash[']'] += 1;
+//         break;
+//       case "{":
+//         cntHash['{'] += 1;
+//         break;
+//       case "}":
+//         cntHash['}'] += 1;
+//         break;
+//     }
+//     // if (countHash['('] !== countHash[")"]) {
+//     //   if (!balancedStack.includes('()')) {
+//     //     balancedStack.push('()')
+//     //   }
+//     // } else if (balancedStack[balancedStack.length -1] === "()") {
+//     //   balancedStack.pop();
+//     // }
+//     if (cntHash[')'] > cntHash['('] || cntHash[']'] > cntHash['['] || cntHash['}'] > cntHash['{']) return false;
+//   }
+//   if (cntHash["("] !== cntHash[")"] || cntHash["["] !== cntHash["]"] || cntHash["{"] !== cntHash["}"]) return false;
+//   return true;
+// }
+
+// to catch super-nested, unbalanced, mixed-bracket strings, like: "((([[[{{{]]]}}})))"
+function balancedParens(str) {
+  // ([()][])
+  const stack = []; // 
+  const pairs = {
+    '(': ')',
+    '[': ']',
+    '{': '}'
+  };
+
+  for (let i = 0; i < str.length; i++) {
+    var char = str[i];
+
+    if (pairs[char]) {
+      stack.push(char);
+    } else if (char === '}' || char === ']' || char === ')') {
+      if (pairs[stack.pop()] !== char) {
+        return false;
+      }
+    }
+  }
+
+  return stack.length === 0;
+};
 
 exports.balancedParens = balancedParens;
+// balancedParens('(');
+// ((( [[[ {{{ ]]] }}} )))
+
+// ( [[  [[ ]]  ]] )

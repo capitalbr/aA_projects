@@ -72,11 +72,58 @@ class Node {
 }
 
 // Refactor the regular Stack below into a MinMaxStack!
-class Stack {
+// class Stack {
+//     constructor() {
+//         this.top = null;
+//         this.bottom = null;
+//         this.length = 0;
+//         this.min = 0;
+//         this.max = 0;
+//     }
+
+//     push(val) {
+//         const newNode = new Node(val);
+//         if (!this.top) {
+//             this.top = newNode;
+//             this.bottom = newNode;
+//         } else {
+//             const temp = this.top;
+//             this.top = newNode;
+//             this.top.next = temp;
+//         }
+//         if (val > this.max){
+//             this.max = val;
+//         }
+//         if (val < this.min){
+//             this.min = val;
+//         }
+//         return ++this.length;
+//     }
+
+//     pop() {
+//         if (!this.top) {
+//             return null;
+//         }
+//         const temp = this.top;
+//         if (this.top === this.bottom) {
+//             this.bottom = null;
+//         }
+//         this.top = this.top.next;
+//         this.length--;
+//         return temp.value;
+//     }
+
+//     size() {
+//         return this.length;
+//     }
+// }
+class MinMaxStack {
     constructor() {
         this.top = null;
         this.bottom = null;
         this.length = 0;
+        this.min = 0;
+        this.max = 0;
     }
 
     push(val) {
@@ -89,6 +136,12 @@ class Stack {
             this.top = newNode;
             this.top.next = temp;
         }
+        if (val > this.max){
+            this.max = val;
+        }
+        if (val < this.min){
+            this.min = val;
+        }
         return ++this.length;
     }
 
@@ -96,20 +149,54 @@ class Stack {
         if (!this.top) {
             return null;
         }
+
+
+        
         const temp = this.top;
         if (this.top === this.bottom) {
             this.bottom = null;
         }
         this.top = this.top.next;
         this.length--;
-        return temp.value;
+        return temp;
+
+        
+
+    //     if (!this.top) {
+    //         return null;
+    //     }
+
+        // if (this.top.value === this.maxValueStorage[this.maxValueStorage.length - 1].value) {
+        //     this.maxValueStorage.pop();
+        // }
+
+        // if (this.top.value === this.minValueStorage[this.minValueStorage.length - 1].value) {
+        //     this.minValueStorage.pop();
+        // }
+
+    //     const temp = this.top;
+    //     if (this.top === this.bottom) {
+    //         this.bottom = null;
+    //     }
+    //     this.top = this.top.next;
+    //     this.length--;
+    //     return temp;
     }
 
     size() {
         return this.length;
     }
+
+    min(){
+        return this.min;
+    }
+
+    max(){
+        return this.max;
+    }
 }
 
 // Forgetting something down here? 
 exports.Node = Node;
-exports.Stack = Stack;
+// exports.Stack = Stack;
+exports.MinMaxStack = MinMaxStack;
